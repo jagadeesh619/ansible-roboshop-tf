@@ -9,12 +9,17 @@
   ansible.builtin.file:
     path: /app
     state: directory
-- name: download application from url
+# - name: download application from url
+#   ansible.builtin.get_url:
+#     url: https://roboshop-builds.s3.amazonaws.com/{{component}}.zip
+#     dest: /tmp/{{component}}.zip
+- name: download application from url from nexus
   ansible.builtin.get_url:
-    url: https://roboshop-builds.s3.amazonaws.com/{{component}}.zip
+    url: "{{ nexus_url }}"
     dest: /tmp/{{component}}.zip
+
 - name: unarchive the zip file
   ansible.builtin.unarchive:
-    src:  /tmp/{{component}}.zip
+    src:  /tmp/{{component}}-{{appversion}}.zip
     dest: /app
     remote_src: yes

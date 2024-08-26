@@ -7,3 +7,6 @@ rabbitmq_host: rabbitmq-dev.infome.website
 mysql_host: mysql-dev.infome.website
 shipping_host: shipping.app-dev.infome.website
 payment_host: payment.app-dev.infome.website
+nexus_url: http://184.73.57.35:8081/repository/{{component}}/com/roboshop/{{component}}/{{appversion}}/{{component}}-{{appversion}}.zip
+
+# http://184.73.57.35:8081/repository/catalogue/com/roboshop/catalogue/1.0.0/catalogue-1.0.0.zip
